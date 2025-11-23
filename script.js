@@ -5,7 +5,11 @@ let result = document.getElementById("result");
 
 function calculateage() {
   let birthdate = new Date(userinput.value);
-
+   if(userinput.value===""){
+       result.innerHTML = `Please enter your birth date`;
+       return;
+   }
+   else{
     let d1 = birthdate.getDate();
     let m1 = birthdate.getMonth() + 1;
     let y1 = birthdate.getFullYear();
@@ -40,8 +44,9 @@ function calculateage() {
         y3--;
     }
     result.innerHTML = `You are <span>${y3}</span> Years, <span>${m3}</span> Months and <span>${d3}</span> Days Old`;
-    
+  } 
 }
+
       function getDaysInMonth(year, month)  {
         return new Date(year, month, 0).getDate();
       }
